@@ -1,0 +1,42 @@
+<div class="col-lg-4 mt-3 p-5">
+  <div class="card-header p-0">
+    <%= image_tag(url_for(fix.image), class: "card-img-top") %>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><b><%= fix.project.name %></b></h5>
+    <h5 class="card-title"><%= fix.name %></h5>
+    <p class="card-text"><%= fix.description %></p>
+    <div class="card-text">
+      <div id="block-<%= fix.id %>">
+        <% if fix.assign_to_id.nil? %>
+          <% if policy(fix).assign? %>
+            <button class="assign-btn" data-project=<%=  fix.project_id %> data-fix= <%= fix.id %>  id="assign-<%= fix.id %>">Assign</button>
+          <% end %>
+        <% else %>
+          <p>Assigned to: <%= fix.assign_to.email %></p>
+        <% end %>
+      </div>
+    </div>
+    <div class="card-text">
+      <div id="complete-block-<%= fix.id %>">
+        <% if fix.complete.nil? %>
+          <% if policy(fix).assign? %>
+            <button class="completed-btn" data-project=<%=  fix.project_id %> data-fix= <%= fix.id %>  id="completed-<%= fix.id %>"  hidden>Complete</button>
+          <% end %>
+        <% else %>
+          <p>Completed: <%= fix.complete %></p>
+        <% end %>
+      </div>
+    </div>
+    <div class="card-text">
+      <% if fix.complete.nil? && fix.assign_to_id!= nil%>
+        <button class="completed-btn" data-project=<%=  fix.project_id %> data-fix= <%= fix.id %>  id="completed-<%= fix.id %>">Complete</button>
+      <% else%>
+        <p hidden>Completed: <%= fix.complete %></p>
+      <% end %>
+    </div >
+  </div>
+  <div class="card-footer text-muted text-center">
+    <%= link_to "Show this fix", project_fix_path(@project, fix), class: 'btn btn-outline-dark' %>
+  </div>
+</div>

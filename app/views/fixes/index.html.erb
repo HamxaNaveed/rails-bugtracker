@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <p style="color: green"><%= notice %></p>
+    <h1 class="text-center">Fixes</h1>
+    <% @fixes.each do |fix| %>
+      <%= render fix %>
+    <% end %>
+    <% if policy(@fixes).new? %>
+    <div class="text-center">
+      <%= link_to "New fix",new_project_fix_path(@project), class: 'btn btn-outline-dark' %>
+    </div>
+    <% end %>
+  </div>
+</div>

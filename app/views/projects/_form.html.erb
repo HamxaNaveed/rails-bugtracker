@@ -1,0 +1,42 @@
+<div class="container mt-5">
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-6">
+      <div class="card px-5 py-5" id="form1">
+        <%= form_with(model: project) do |form| %>
+          <% if project.errors.any? %>
+            <div style="color: red">
+              <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+              <ul>
+                <% project.errors.each do |error| %>
+                  <li><%= error.full_message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <div>
+            <% if project.new_record?%>
+              <h2 class="text-center">Create a Project</h2>
+            <% else %>
+            <% end %>
+            <%= form.label :name, class: "form-label" %>
+            <%= form.text_field :name, class: "form-control" %>
+            <%= form.label :developer, class: "form-label" %><br>
+            <%= form.collection_check_boxes :developer_ids, User.all.where(role_id: 1), :id, :email do |cb|  %>
+              <% cb.label(class: "checkbox-inline input_checkbox checkbox") {cb.check_box(class: "checkbox") + cb.text} %>
+            <% end %>
+            <br>
+            <%= form.label :qa_id, class: "form-label" %>
+            <%= form.select(:qa_id, User.all.where(role_id: 3).map{ |u| ["#{u.email}", u.id] }, {}, {class: "form-control"}) %>
+            <div>
+              <%= form.submit "Create Project", class: "btn btn-outline-dark" %>
+            </div>
+            <% if project.new_record? %>
+              <div>
+                <%= link_to "Back to projects", projects_path, class: 'btn btn-dark' %>
+              </div>
+            <% else %>
+            <% end %>
+          <% end %>
+        </div>
+    </div>
+  </div>

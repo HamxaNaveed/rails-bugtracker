@@ -1,0 +1,14 @@
+<div class="p-5 text-center bg-image information-container " >
+  <div class="mask">
+    <div class="d-flex justify-content-center align-items-center h-100">
+      <div class="text-white">
+        <h1 class="mb-3">Welcome to Bug Tracker</h1>
+        <% if user_signed_in? %>
+          <%= link_to "Sign out", destroy_user_session_path, class: "btn btn-outline-light", :method => :delete %>
+        <% else %>
+          <%= link_to "Sign in", new_user_session_path, class: "btn btn-outline-light" %>
+        <%end%>
+      </div>
+    </div>
+  </div>
+</div>

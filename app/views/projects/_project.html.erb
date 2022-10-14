@@ -1,0 +1,26 @@
+<div class="container">
+<div id="<%= dom_id project %>">
+  <div class="dashboard-container">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Project Title</th>
+          <th scope="col">Project Manager</th>
+          <th scope="col">Project Developers</th>
+          <th scope="col">Project QA</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td><%= project.name %></td>
+          <td><%= project.created_by.email %></td>
+          <td><%= project.developers.pluck(:email) %></td>
+          <td><%= project.qa.email %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+<%= render @fix %>
+<div class="text-center">
+
+</div>
+<div class="text-center">
+  <%= link_to "Edit this fix", edit_project_fix_path(@project, @fix), class: 'btn btn-outline-secondary btn-sm' %>
+  <%= link_to 'destroy', project_fix_path(@project, @fix), method: :delete, class: 'btn btn-outline-secondary btn-sm' %>
+  <%= link_to "Back to fixes", project_fixes_path , class: 'btn btn-outline-secondary btn-sm'%>
+</div>
