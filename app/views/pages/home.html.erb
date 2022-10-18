@@ -1,13 +1,11 @@
-<div class="p-5 text-center bg-image information-container " >
-  <div class="mask">
-    <div class="d-flex justify-content-center align-items-center h-100">
-      <div class="text-white">
-        <h1 class="mb-3">Welcome to Bug Tracker</h1>
-        <% if user_signed_in? %>
-          <%= link_to "Sign out", destroy_user_session_path, class: "btn btn-outline-light", :method => :delete %>
-        <% else %>
-          <%= link_to "Sign in", new_user_session_path, class: "btn btn-outline-light" %>
-        <%end%>
+<div class="container m-20">
+  <div class="home-container">
+    <div class="align-items-center row ">
+      <div class="col-lg-6 col-md-7">
+        <%= link_to image_tag("home.svg", :alt => "Image Description") %>
+      </div>
+      <div class="col-lg-6 md-12">
+        <h1 class="home-heading">Welcome to Bug Finder</h1>
       </div>
     </div>
   </div>

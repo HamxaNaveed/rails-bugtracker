@@ -1,4 +1,6 @@
+
 <div class="col-lg-4 mt-3 p-5">
+<div class="fixes">
   <div class="card-header p-0">
     <%= image_tag(url_for(fix.image), class: "card-img-top") %>
   </div>
@@ -9,9 +11,9 @@
     <div class="card-text">
       <div id="block-<%= fix.id %>">
         <% if fix.assign_to_id.nil? %>
-          <% if policy(fix).assign? %>
+            <% if policy(fix).assign? %>
             <button class="assign-btn" data-project=<%=  fix.project_id %> data-fix= <%= fix.id %>  id="assign-<%= fix.id %>">Assign</button>
-          <% end %>
+            <% end %>
         <% else %>
           <p>Assigned to: <%= fix.assign_to.email %></p>
         <% end %>
@@ -20,7 +22,7 @@
     <div class="card-text">
       <div id="complete-block-<%= fix.id %>">
         <% if fix.complete.nil? %>
-          <% if policy(fix).assign? %>
+          <% if policy(fix).complete? %>
             <button class="completed-btn" data-project=<%=  fix.project_id %> data-fix= <%= fix.id %>  id="completed-<%= fix.id %>"  hidden>Complete</button>
           <% end %>
         <% else %>
@@ -39,4 +41,5 @@
   <div class="card-footer text-muted text-center">
     <%= link_to "Show this fix", project_fix_path(@project, fix), class: 'btn btn-outline-dark' %>
   </div>
+</div>
 </div>

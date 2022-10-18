@@ -1,6 +1,6 @@
 <div class="container mt-5">
-  <div class="row d-flex justify-content-center">
-    <div class="col-md-6">
+  <div class="align-items-center row">
+    <div class="col-md-6 col-sm-12">
       <div class="card px-5 py-5" id="form1">
         <%= form_with(model: project) do |form| %>
           <% if project.errors.any? %>
@@ -17,6 +17,7 @@
             <% if project.new_record?%>
               <h2 class="text-center">Create a Project</h2>
             <% else %>
+             <h2 class="text-center">Update the Project</h2>
             <% end %>
             <%= form.label :name, class: "form-label" %>
             <%= form.text_field :name, class: "form-control" %>
@@ -27,16 +28,21 @@
             <br>
             <%= form.label :qa_id, class: "form-label" %>
             <%= form.select(:qa_id, User.all.where(role_id: 3).map{ |u| ["#{u.email}", u.id] }, {}, {class: "form-control"}) %>
-            <div>
-              <%= form.submit "Create Project", class: "btn btn-outline-dark" %>
+            <div class="text-center">
+              <%= form.submit "Create Project", class: "btn btn-warning" %>
             </div>
             <% if project.new_record? %>
-              <div>
+              <div class="text-center">
                 <%= link_to "Back to projects", projects_path, class: 'btn btn-dark' %>
               </div>
             <% else %>
             <% end %>
           <% end %>
         </div>
+      </div>
     </div>
+    <div class="col-md-6">
+         <%= link_to image_tag("projects.svg", :alt => "Image Description") %>
+    <div>
   </div>
+</div>

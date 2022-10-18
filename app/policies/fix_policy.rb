@@ -11,11 +11,11 @@ class FixPolicy < ApplicationPolicy
     end
 
     def assign?
-      @user.role.name == "developer"
+      user.role.name == "developer"
     end
 
     def complete?
-      @user.role.name == "developer"
+      user.role.name == "developer"
     end
   end
   

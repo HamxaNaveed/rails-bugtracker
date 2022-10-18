@@ -1,11 +1,15 @@
-<%= render @project %>
-<div class="text-center">
-  <%= link_to "Edit this project", edit_project_path(@project), class: 'btn btn-outline-success' %>
-  <% if @project.fixes.count == 0 %>
-    <%= link_to "New fix",new_project_fix_path(@project,@fix), class: 'btn btn-outline-dark' %>
-  <%else%>
-    <%= link_to "Bugs of this Project", project_fixes_path(@project) , class: 'btn btn-outline-dark'%>
-  <%end%>
-  <%= link_to "Back to projects", projects_path, class: 'btn btn-outline-warning' %>
-  <%= button_to "Destroy this project", @project, method: :delete, class: 'btn btn-outline-danger' %>
+<div class="container">
+  <%= render @project %>
+  <div class="text-center">
+    <%= link_to "Edit", edit_project_path(@project), class: 'btn btn-outline-success' %>
+    <%= link_to "Back to projects", projects_path, class: 'btn btn-warning' %>
+    <% if @project.fixes.count == 0 %>
+      <%= link_to "New fix",new_project_fix_path(@project,@fix), class: 'btn btn-outline-dark' %>
+    <%else%>
+      <%= link_to "Bugs", project_fixes_path(@project) , class: 'btn btn-outline-dark'%>
+    <%end%>
+    
+    <%= button_to "Destroy", @project, method: :delete, class: 'btn btn-outline-danger' %>
+  </div>
+</div>
 </div>

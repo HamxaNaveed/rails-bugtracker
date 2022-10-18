@@ -1,12 +1,13 @@
-    <script src="https://kit.fontawesome.com/3725aaeb49.js" crossorigin="anonymous"></script>
-<nav class="navbar navbar-expand-sm bg-white">
-  <div class="container-fluid">
-    <%= link_to image_tag("logo.png", :alt => "Image Description", :class => "navbar-brand logo"), root_path %>
+<nav class="navbar navbar-expand-sm navbar-light bg-white">
+  <div class="container">
+    <div class="navbar-brand">
+     <%= link_to "Bug Finder", root_path, class: "navbar-brand"%>
+    </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+      <ul class="navbar-nav ">
         <% if user_signed_in? %>
           <li class="nav-item">
             <%= link_to "Projects", projects_path, class: "nav-link"%>
@@ -22,11 +23,10 @@
             <%= link_to "Sign in", new_user_session_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Registration", new_user_registration_path, class: "nav-link" %>
+            <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
           </li>
         <% end %>
       </ul>
-     
     </div>
   </div>
 </nav>

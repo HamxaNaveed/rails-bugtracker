@@ -1,5 +1,5 @@
 <div class="container mt-5">
-  <div class="row d-flex justify-content-center">
+  <div class="align-items-center row">
     <div class="col-md-6">
       <div class="card px-5 py-5" id="form1">
         <%= form_with(model: [@project, fix]) do |form| %>
@@ -13,29 +13,31 @@
               </ul>
             </div>
           <% end %>
+          <h2 class="text-center">Create a Fix</h2>
           <div>
-            <%= form.label :name, style: "display: block" %>
+            <%= form.label :name, style: "display: block", class: "form-label" %>
             <%= form.text_field :name , class: "form-control"%>
           </div>
           <div>
-            <%= form.label :description, style: "display: block" %>
+            <%= form.label :description, style: "display: block" , class: "form-label"%>
             <%= form.text_area :description, class: "form-control" %>
           </div>
           <div>
-            <%= form.label :project_id, style: "display: block" %>
+            <%= form.label :project_id, style: "display: block", class: "form-label" %>
             <%= form.text_field :project_id, class: "form-control" %>
           </div>
           <div>
-            <%= form.label :image, style: "display: block" %>
+            <%= form.label :image, style: "display: block", class: "form-label" %>
             <%= form.file_field :image , class: "form-control"%>
           </div>
-          
           <br>
           <div class="text-center">
-            <%= form.submit "Create Fix", class: "btn btn-outline-dark" %>
+            <%= form.submit "Create Fix", class: "btn btn-warning" %>
           </div>
         <% end %>
       </div>
     </div>
+    <div class="col-md-6">
+      <%= link_to image_tag("fix.svg", :alt => "Image Description") %>
+    </div>
   </div>
-</div>

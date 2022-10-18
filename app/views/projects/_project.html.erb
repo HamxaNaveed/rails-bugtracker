@@ -1,26 +1,35 @@
-<div class="container">
-<div id="<%= dom_id project %>">
-  <div class="dashboard-container">
-    <table class="table">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Project Title</th>
-          <th scope="col">Project Manager</th>
-          <th scope="col">Project Developers</th>
-          <th scope="col">Project QA</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td><%= project.name %></td>
-          <td><%= project.created_by.email %></td>
-          <td><%= project.developers.pluck(:email) %></td>
-          <td><%= project.qa.email %></td>
-        </tr>
-      </tbody>
-    </table>
+<div class="col-lg-12">
+  <div id="<%= dom_id project %>">
+    <div class="projects-container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Created by</th>
+            <th scope="col">Developers</th>
+            <th scope="col">QA</th>
+            <% if current_page?('/projects') %>
+              
+            <% else %>
+            <% end %>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= project.name %></td>
+            <td><%= project.created_by.email %></td>
+            <td><%= project.developers.pluck(:email) %></td>
+            <td><%= project.qa.email%></td>
+            <td><% if current_page?('/projects') %>
+                <div>
+                  <% if policy(project).show? %>
+                    <td><%= link_to "View", project , class: 'btn btn-warning' %></td>
+                  <% end %>
+                </div>
+              <% else %>
+              <% end %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
-</div>
-</div>

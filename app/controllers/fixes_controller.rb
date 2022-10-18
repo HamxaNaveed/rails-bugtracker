@@ -43,6 +43,7 @@ class FixesController < ApplicationController
         format.json { render json: @fix.errors }
       end
     end
+    authorize @fix
   end
 
   def complete
