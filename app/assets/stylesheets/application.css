@@ -50,7 +50,6 @@ h2 p {
 table {
   border: 1px solid black;
   table-layout: fixed;
-    word-wrap: break-word;
   width:10%
 }
 td {
