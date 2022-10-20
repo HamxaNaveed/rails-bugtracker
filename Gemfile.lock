@@ -74,6 +74,8 @@ GEM
       msgpack (~> 1.2)
     bootstrap-select-rails (1.13.8)
     builder (3.2.4)
+    bulk_insert (1.9.0)
+      activerecord (>= 3.2.0)
     capybara (3.37.1)
       addressable
       matrix
@@ -232,6 +234,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   bootstrap-select-rails
+  bulk_insert (~> 1.0)
   capybara
   debug
   devise (~> 4.8, >= 4.8.1)

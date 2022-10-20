@@ -12,3 +12,5 @@ roles = [
     {name: "developer"},
     {name: "qa"},
 ]
+
+Role.bulk_insert values: roles if Role.count == 0
