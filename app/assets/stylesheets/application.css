@@ -50,7 +50,6 @@ h2 p {
 table {
   border: 1px solid black;
   table-layout: fixed;
-  width: 200px;
 }
 td {
   width: 100px;
