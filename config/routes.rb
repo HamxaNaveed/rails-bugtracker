@@ -7,13 +7,15 @@ Rails.application.routes.draw do
     end
   end
   
+  resources :dashboards, only: [:index]
+
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
 
   devise_scope :user do  
     get '/users/sign_out' => 'devise/sessions#destroy'   
     authenticated :user do
-      root 'projects#dashboard', as: :authenticated_root
+      root 'pages#dashboard', as: :authenticated_root
     end  
   end
 
@@ -22,5 +24,4 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "pages#home"
-  get '/profile', to: 'pages#profile'
 end

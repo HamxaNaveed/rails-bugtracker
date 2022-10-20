@@ -1,0 +1,18 @@
+<div class="text-center">
+  <h2>Welcome 
+    <p><%=  current_user.email%> to your Dashboard</p>
+  </h2>
+  <div class="dashboard-card ">
+    <div class="card" >
+      <div class="card-body">
+        <h5 class="card-title">Projects</h5>
+        <h6 class="card-subtitle mb-2 text-muted"><%= @manager_project %></h6>
+        
+        <h5 class="card-title">Developers</h5>
+        <h6 class="card-subtitle mb-2 text-muted"><%= @users.where(role_id: 1).count %></h6>
+        <h5 class="card-title">QA</h5>
+        <h6 class="card-subtitle mb-2 text-muted"><%= @users.where(role_id: 3).count %></h6>
+      </div>
+    </div>
+  </div>
+</div>

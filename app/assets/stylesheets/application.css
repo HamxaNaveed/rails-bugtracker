@@ -25,6 +25,12 @@ h2 {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
 }
+h2 p {
+  color: #5e5e5e !important;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+}
 .input-group {
   height: 40px;
 }
@@ -37,11 +43,11 @@ h2 {
   font-weight: 600;
   margin: 5px;
 }
-.form-control{
+.form-control {
   border-radius: 10px;
 }
 
-table{
+table {
   border: 1px solid black;
   table-layout: fixed;
   width: 200px;
@@ -51,7 +57,7 @@ td {
   margin: 5px;
   overflow-y: auto;
 }
-.card{
+.card {
   border: none;
 }
 
@@ -109,7 +115,7 @@ p.flash-correct {
   font-size: 45px !important;
   letter-spacing: 1px;
 }
-.home-container{
+.home-container {
   margin-top: 35px;
 }
 
@@ -182,7 +188,7 @@ p.flash-correct {
 
 /* Projects Cards */
 
-.projects-container{
+.projects-container {
   margin: 50px;
 }
 .section h4 {
@@ -198,13 +204,22 @@ p.flash-correct {
   margin: 3px;
 }
 
-.dashboard-card{
+.dashboard-card {
   border: solid rgb(187, 184, 184) 1px;
   display: inline-block;
+  border-radius: 20px;
+  padding: 20px;
+  background: #fff;
+  font-size: 16px;
+  box-shadow: 0 0 10px 10px #f0f0f0;
 }
 
 .dashboard-card:hover {
   box-shadow: #f78159 0px 7px 29px 0px;
+  color: #ff571f;
+}
+.card-title{
+  font-weight: bold;
 }
 /* Buttons */
 .btn {
@@ -230,13 +245,13 @@ p.flash-correct {
   opacity: 1;
 }
 
-.links{
+.links {
   text-decoration: none;
   color: black;
   opacity: 0.5;
 }
 
-.links:hover{
+.links:hover {
   text-decoration: none;
   color: black;
   opacity: 0.8;
@@ -244,11 +259,10 @@ p.flash-correct {
 
 /* Profile */
 
-.profile{
+.profile {
   padding: auto;
   margin: 0 100px;
 }
-
 
 /* Navbar Hover on Big Screen only */
 

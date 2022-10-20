@@ -46,4 +46,3 @@ $(".completed-btn").click(function () {
     },
   });
 });
-

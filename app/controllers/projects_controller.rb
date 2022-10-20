@@ -21,8 +21,7 @@ class ProjectsController < ApplicationController
   def edit
   end
 
-  def dashboard
-  end
+ 
 
   # POST /projects or /projects.json
   def create
