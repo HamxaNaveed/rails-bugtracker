@@ -8,8 +8,8 @@
 
 
 roles = [
-    {name: "manager"},
     {name: "developer"},
+    {name: "manager"},
     {name: "qa"},
 ]
 

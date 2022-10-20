@@ -5,7 +5,7 @@
         <%= form_with(model: project) do |form| %>
           <% if project.errors.any? %>
             <div style="color: red">
-              <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+              <h2><%= pluralize(project.errors.count, "error") %> prohibited this fix from being saved:</h2>
               <ul>
                 <% project.errors.each do |error| %>
                   <li><%= error.full_message %></li>
@@ -13,6 +13,8 @@
               </ul>
             </div>
           <% end %>
+          <%= @project.errors.full_messages.first if @project.errors.any? %>
+
           <div>
             <% if project.new_record?%>
               <h2 class="text-center">Create a Project</h2>
