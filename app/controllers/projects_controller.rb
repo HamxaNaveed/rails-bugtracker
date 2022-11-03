@@ -4,7 +4,12 @@ class ProjectsController < ApplicationController
 
   # GET /projects or /projects.json
   def index
+    
     @projects = Project.all
+    @user_projects = UserProject.all
+    @manager_project = @projects.where(created_by_id: current_user.id)
+    @developer_project = @user_projects.where(developer_id: current_user.id)
+    @qa_project =  @projects.where(qa_id: current_user.id)
   end
 
   # GET /projects/1 or /projects/1.json

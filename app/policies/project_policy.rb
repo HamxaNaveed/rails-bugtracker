@@ -1,9 +1,12 @@
 class ProjectPolicy < ApplicationPolicy
   class Scope < Scope
-
     def resolve
       
     end
+
+  end
+
+  def index?
   end
 
   def new?

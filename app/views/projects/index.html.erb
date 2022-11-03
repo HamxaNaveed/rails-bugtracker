@@ -1,8 +1,18 @@
 <div class="container">
   <div id="projects">
     <div class="row">
-      <% @projects.each do |project| %>
+      <% if current_user.role_id = 2 %>
+      <% @manager_project.each do |project| %>
         <%= render project %>
+      <% end %>
+      <% end %>
+      <% if current_user.role_id = 3 %>
+      <% @qa_project.each do |project| %>
+        <%= render project %>
+      <% end %>
+      <% end %>
+       <% if current_user.role_id = 1 %>
+        <%= render 'projects/developerproject' %>
       <% end %>
       <% if policy(@projects).new? %>
         <div class="text-center">

@@ -30,6 +30,7 @@
         <% end %>
       </div>
     </div>
+    
     <div class="card-text">
       <% if fix.complete.nil? && fix.assign_to_id!= nil%>
         <button class="completed-btn" data-project=<%=  fix.project_id %> data-fix= <%= fix.id %>  id="completed-<%= fix.id %>">Complete</button>

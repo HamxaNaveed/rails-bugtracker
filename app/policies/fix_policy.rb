@@ -5,9 +5,15 @@ class FixPolicy < ApplicationPolicy
         
       end
     end
+    attr_reader :user, :record
+
+    def initialize(user, record)
+      @user = user
+      @record = record
+    end
   
     def new?
-      @user.role.name == "qa"
+      user.role.name == "qa"
     end
 
     def assign?
@@ -15,7 +21,7 @@ class FixPolicy < ApplicationPolicy
     end
 
     def complete?
-      user.role.name == "developer"
+      record.assign_to_id == user.id
     end
   end
   
